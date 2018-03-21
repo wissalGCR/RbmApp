@@ -6,5 +6,8 @@
     android:layout_height="match_parent"
     android:background="@drawable/bee2"
     tools:context="com.example.wissal1.rbmapp.Main2Activity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </android.support.constraint.ConstraintLayout>
