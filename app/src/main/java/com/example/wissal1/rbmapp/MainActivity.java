@@ -12,5 +12,7 @@ public class MainActivity extends AppCompatActivity {
     }
     private void testUp() {
         int i= 1+1 ;
+        int ii =1+4;
+        int k = i+ii ;
     }
 }
