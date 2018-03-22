@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
                 mDialog.show();
                 //mDialog.dismiss();
                 Toast.makeText(MainActivity.this, "Sign in successfully !", Toast.LENGTH_SHORT).show();
-                Intent homeIntent =new Intent(MainActivity.this,Main2Activity.class);
-                startActivity(homeIntent);
+               // Intent homeIntent =new Intent(MainActivity.this,Main2Activity.class);
+               // startActivity(homeIntent);
 
 
             }
