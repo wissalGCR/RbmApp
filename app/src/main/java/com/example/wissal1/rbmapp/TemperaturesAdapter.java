@@ -64,8 +64,9 @@ public class TemperaturesAdapter extends RecyclerView.Adapter<TemperaturesAdapte
         // Displaying dot from HTML character code
         holder.dot.setText(Html.fromHtml("&#8226;"));
 
-        // Formatting and displaying timestamp
+        // Formatting and displaying date
         holder.date.setText(formatDate(temperature.getDate()));
+
         holder.num.setText(temperature.getNumruche());
 
     }

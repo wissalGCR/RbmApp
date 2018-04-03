@@ -28,12 +28,12 @@ public class Main2Activity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        /*i2= new Intent(this,Main4Activity.class);
+        i2= new Intent(this,Main4Activity.class);
         mycardHumidite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(i2);
             }
-        });*/
+        });
     }
 }
