@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#004d40</color>
+    <color name="colorPrimary">#FFC107</color>
     <color name="colorPrimaryDark">#ebeb16</color>
     <color name="colorAccent">#39796b</color>
     <color name="btnSignUp">#39796b</color>
-    <color name="btnSignActive">#A9d440</color>
+    <color name="btnSignActive">#FFFF5E00</color>
     <color name="overlayBackground">#7f333639</color>
     <color name="overlayActionBar">#0b1616</color>
     <color name="white">#ffffff</color>
+    <color name="msg_no_notes">#999</color>
+    <color name="hint_enter_note">#89c3c3c3</color>
+    <color name="timestamp">#858585</color>
+    <color name="note_list_text">#232323</color>
+
+
+
+
 </resources>
