@@ -38,9 +38,10 @@ public class SmsBroadcastReceiver extends BroadcastReceiver {
             if (sender != null && sender.equals("123")) {
                 // Process our sms...
                 abortBroadcast();
+                String t="smsMessage.charAt(3)"+"smsMessage.charAt(4)";
                 System.out.print("ok");
                 Main3Activity inst = Main3Activity.instance();
-                //inst.createTemperature( "20" , "20");
+                inst.createTemperature( sender , t);
 
 
             }
