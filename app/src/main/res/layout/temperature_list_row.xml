@@ -27,6 +27,14 @@
         android:layout_toRightOf="@id/dot"
         android:textColor="@color/timestamp"
         android:textSize="@dimen/timestamp" />
+    <TextView
+        android:id="@+id/num"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/dot"
+        android:textColor="@color/timestamp"
+        android:textSize="@dimen/timestamp" />
+
 
     <TextView
         android:id="@+id/temperature"

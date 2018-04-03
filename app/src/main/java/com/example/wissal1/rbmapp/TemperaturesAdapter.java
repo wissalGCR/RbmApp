@@ -36,7 +36,7 @@ public class TemperaturesAdapter extends RecyclerView.Adapter<TemperaturesAdapte
             temperature = view.findViewById(R.id.temperature);
             dot = view.findViewById(R.id.dot);
             date = view.findViewById(R.id.date);
-            //num=view.findViewById(R.id.num);
+            num=view.findViewById(R.id.num);
         }
     }
 
@@ -57,15 +57,16 @@ public class TemperaturesAdapter extends RecyclerView.Adapter<TemperaturesAdapte
 
     @Override
     public void onBindViewHolder(@NonNull TemperaturesAdapter.MyViewHolder holder, int position) {
-        Temperature note = temperaturesList.get(position);
+        Temperature temperature = temperaturesList.get(position);
 
-        holder.temperature.setText(note.getValeurTemperature());
+        holder.temperature.setText(temperature.getValeurTemperature());
 
         // Displaying dot from HTML character code
         holder.dot.setText(Html.fromHtml("&#8226;"));
 
         // Formatting and displaying timestamp
-        holder.date.setText(formatDate(note.getDate()));
+        holder.date.setText(formatDate(temperature.getDate()));
+        holder.num.setText(temperature.getNumruche());
 
     }
 

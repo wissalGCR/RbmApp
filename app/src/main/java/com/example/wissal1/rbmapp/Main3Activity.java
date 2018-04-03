@@ -71,20 +71,14 @@ public class Main3Activity extends AppCompatActivity {
             }
         });
 
-
-      // temperaturesList.addAll(db.getAllTemperatures());
+        temperaturesList.addAll(db.getAllTemperatures());
         mAdapter = new TemperaturesAdapter(this, temperaturesList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.addItemDecoration(new MyDividerItemDecoration(this, LinearLayoutManager.VERTICAL, 16));
         recyclerView.setAdapter(mAdapter);
-        /*fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showTemperatureDialog(false, null, -1);
-            }
-        });*/
+
 
         toggleEmptyNotes();
 
@@ -113,8 +107,8 @@ public class Main3Activity extends AppCompatActivity {
          * and refreshing the list
          */
 
-   // String num ="20" ;
-   // String temperature="20";
+   String num ="20" ;
+    String temperature="20";
 
 
 
