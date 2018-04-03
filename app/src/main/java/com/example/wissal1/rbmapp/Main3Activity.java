@@ -50,7 +50,7 @@ public class Main3Activity extends AppCompatActivity {
     public static Main3Activity instance() {
         return inst;
     }
-    FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
 
 
     @Override
@@ -63,9 +63,16 @@ public class Main3Activity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycler_view);
         noTemperaturesView = findViewById(R.id.empty_tem_view);
         db = new DatabaseHelper(this);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showTemperatureDialog(false, null, -1);
+            }
+        });
 
 
-       temperaturesList.addAll(db.getAllTemperatures());
+      // temperaturesList.addAll(db.getAllTemperatures());
         mAdapter = new TemperaturesAdapter(this, temperaturesList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
@@ -114,14 +121,14 @@ public class Main3Activity extends AppCompatActivity {
 
        public void createTemperature(String num ,String temperature) {
             // inserting note in db and getting
-            // newly inserted note id
+            // newly inserted temperature id
             long id = db.insertTemperature(num ,temperature);
 
-            // get the newly inserted note from db
+            // get the newly inserted temperature from db
             Temperature t = db.getTemperature(id);
 
             if (t != null) {
-                // adding new note to array list at 0 position
+                // adding new temperature to array list at 0 position
                 temperaturesList.add(0, t);
 
                 // refreshing the list
@@ -133,15 +140,15 @@ public class Main3Activity extends AppCompatActivity {
         }
 
     /**
-     * Updating note in db and updating
+     * Updating temperature in db and updating
      * item in the list by its position
      */
-    private void updateNote(String temperature, int position) {
+    private void updateTemperature(String temperature, int position) {
         Temperature t = temperaturesList.get(position);
-        // updating note text
+        // updating temperature text
         t.setValeurTemperature(temperature);
 
-        // updating note in db
+        // updating temperature in db
         //db.updateNote(n);
 
         // refreshing the list
@@ -223,8 +230,8 @@ public class Main3Activity extends AppCompatActivity {
                     return;
                 } else {
                     alertDialog.dismiss();
-                    //smsManager.sendTextMessage(phonenumber.getText().toString(), null, "Temperature", null, null);
-                    //Toast.makeText(Main3Activity.this, "Message Sent!", Toast.LENGTH_SHORT).show();
+                    smsManager.sendTextMessage(phonenumber.getText().toString(), null, "Temperature", null, null);
+                    Toast.makeText(Main3Activity.this, "Message Sent!", Toast.LENGTH_SHORT).show();
                     /*Uri sentURI = Uri.parse("content://sms/inbox");
                     String[] columns = new String[] { "_id" };
                     Cursor c = context.getContentResolver().query(sentURI, columns, null, null, null);
@@ -246,7 +253,7 @@ public class Main3Activity extends AppCompatActivity {
 
 
 
-                    }*/
+                    }
 
                 }
 
@@ -272,15 +279,15 @@ public class Main3Activity extends AppCompatActivity {
 
 
                 }*/
-                // check if user updating note
-                if (shouldUpdate && temperature != null) {
-                    // update note by it's id
-                    updateNote(inputTemperature.getText().toString(), position);
-                } else {
-                    // create new note
-                    createTemperature(inputTemperature.getText().toString(),inputTemperature.getText().toString());
-                }
-            }
+                    // check if user updating note
+                    /*if (shouldUpdate && temperature != null) {
+                        // update note by it's id
+                        updateTemperature(inputTemperature.getText().toString(), position);
+                    } else {
+                        // create new note
+                        createTemperature(inputTemperature.getText().toString(), inputTemperature.getText().toString());
+                    }*/
+                } }
         });
     }
 
@@ -288,8 +295,8 @@ public class Main3Activity extends AppCompatActivity {
 
 
 
-   /* public void getPermissionToReadSMS() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_SMS)
+    public void getPermissionToReadSMS() {
+        if (ContextCompat.checkSelfPermission(Main3Activity.this, Manifest.permission.READ_SMS)
                 != PackageManager.PERMISSION_GRANTED) {
             if (shouldShowRequestPermissionRationale(
                     Manifest.permission.READ_SMS)) {
@@ -298,7 +305,7 @@ public class Main3Activity extends AppCompatActivity {
             requestPermissions(new String[]{Manifest.permission.READ_SMS},
                     READ_SMS_PERMISSIONS_REQUEST);
         }
-    }*/
+    }
 
 
 
